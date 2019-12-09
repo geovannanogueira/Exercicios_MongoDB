@@ -1,0 +1,20 @@
+Ordene pela data de inclusão.
+
+-db.tasks.find().sort({ dataInclusao: 1 }).pretty()
+
+Ordene pelas descrições.
+
+-db.tasks.find().sort({ descricao: 1 }).pretty()
+
+Ordene pela quantidade de caracteres das descrições.
+
+-db.food.aggregate([{$project: {"name": 1,"length": { $strLenCP: "$name" }}}])
+
+Procure somente registros aonde o dia da data de inclusão seja igual a 01.
+
+-db.tasks.find({ dataInclusao: /^01/ }).pretty()
+
+
+-db.tasks.find().sort({_id: 1})                //ordem decrescente
+
+-db.tasks.find().sort({_id: -1})               //ordem crescente
